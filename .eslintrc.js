@@ -11,7 +11,7 @@ module.exports = {
 
   extends: [
     'airbnb-base',
-    'plugin:vue/vue3-essential',
+    'plugin:vue/vue3-recommended',
     'prettier',
     'plugin:prettier/recommended',
     '@vue/airbnb',
@@ -22,6 +22,7 @@ module.exports = {
     'class-methods-use-this': 'off',
     'import/no-unresolved': 'off',
     'import/extensions': 'off',
+    'no-unused-vars': 'warn',
     'implicit-arrow-linebreak': 'off',
     'import/prefer-default-export': 'off',
     'vue/component-name-in-template-casing': [
