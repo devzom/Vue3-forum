@@ -12,7 +12,7 @@
           </p>
           <p class="text-faded text-xsmall">
             By <a href="profile.html"> {{ userById(thread.userId).name }}</a
-            >, {{ thread.publishedAt }}.
+            >, {{ $filters.date(thread.publishedAt) }}
           </p>
         </div>
 
