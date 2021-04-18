@@ -26,6 +26,8 @@ module.exports = {
     'disable-next-line': 'off',
     'no-unused-vars': 'off',
     'max-len': 'off',
+    'object-curly-newline': 'off',
+    'object-curly-spacing': 'off',
     'implicit-arrow-linebreak': 'off',
     'import/prefer-default-export': 'off',
     'vue/component-name-in-template-casing': [
@@ -37,7 +39,7 @@ module.exports = {
     ],
 
     'prettier/prettier': [
-      'error',
+      'warn',
       {
         singleQuote: true,
         trailingComma: 'none',
