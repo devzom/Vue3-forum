@@ -12,7 +12,8 @@
           </p>
           <p class="text-faded text-xsmall">
             By <a href="profile.html"> {{ userById(thread.userId).name }}</a
-            >, {{ $filters.dateRelative(thread.publishedAt) }}
+            >,
+            <base-date :timestamp="thread.publishedAt" />
           </p>
         </div>
 
@@ -27,7 +28,9 @@
             <p class="text-xsmall">
               <a href="profile.html">{{ userById(thread.userId).name }}</a>
             </p>
-            <p class="text-xsmall text-faded">2 hours ago</p>
+            <p class="text-xsmall text-faded">
+              <base-date :timestamp="thread.publishedAt" />
+            </p>
           </div>
         </div>
       </div>
@@ -37,9 +40,11 @@
 
 <script>
 import data from '@/assets/dummyData.json';
+import BaseDate from '@/components/BaseDate';
 
 export default {
   name: 'ThreadList',
+  components: { BaseDate },
   props: {
     threads: {
       type: Array,
