@@ -1,4 +1,5 @@
-import PageHome from '@/pages/PageHome';
+import PageHome from '@/pages/Home';
+import Forum from '@/pages/Forum';
 import PageThreadItem from '@/components/PageThreadItem';
 import NotFound from '@/pages/404';
 import { createRouter, createWebHistory } from 'vue-router';
@@ -6,6 +7,7 @@ import sourceData from '@/assets/dummyData.json';
 
 const routes = [
   { path: '/', name: 'Home', component: PageHome },
+  { path: '/forum/:id', name: 'Forum', component: Forum, props: true },
   {
     path: '/thread/:id',
     name: 'Thread',
