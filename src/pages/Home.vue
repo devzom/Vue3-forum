@@ -2,19 +2,19 @@
   <div class="col-full push-top text-center">
     <h1>Vue forum</h1>
   </div>
-  <forum-list :forums="forums" />
+  <category-list :categories="categories" />
 </template>
 
 <script>
 import data from '@/assets/dummyData.json';
-import ForumList from '@/components/ForumList';
+import CategoryList from '@/components/category/CategoryList';
 
 export default {
   name: 'Home',
-  components: { ForumList },
+  components: { CategoryList },
   data() {
     return {
-      forums: data.forums
+      categories: data.categories
     };
   }
 };

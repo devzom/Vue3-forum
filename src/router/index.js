@@ -1,13 +1,15 @@
-import PageHome from '@/pages/Home';
-import Forum from '@/pages/Forum';
-import PageThreadItem from '@/components/PageThreadItem';
-import NotFound from '@/pages/404';
 import { createRouter, createWebHistory } from 'vue-router';
 import sourceData from '@/assets/dummyData.json';
+import PageHome from '@/pages/Home';
+import Forum from '@/pages/Forum';
+import Category from '@/pages/Category';
+import PageThreadItem from '@/components/PageThreadItem';
+import NotFound from '@/pages/404';
 
 const routes = [
   { path: '/', name: 'Home', component: PageHome },
   { path: '/forum/:id', name: 'Forum', component: Forum, props: true },
+  { path: '/category/:id', name: 'Category', component: Category, props: true },
   {
     path: '/thread/:id',
     name: 'Thread',
