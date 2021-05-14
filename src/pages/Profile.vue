@@ -8,13 +8,6 @@
 
         <profile-edit v-if="edit" :user="user" />
         <profile-card v-else :user="user" />
-        <div class="text-center">
-          <hr />
-
-          <router-link :to="{ name: 'ProfileEdit' }" class="btn-green btn-small"
-            >Edit Profile</router-link
-          >
-        </div>
       </div>
 
       <div class="col-7 push-top">

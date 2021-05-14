@@ -23,6 +23,14 @@
       <i class="fa fa-globe"></i>
       <a :href="user.website">{{ user.website }}</a>
     </p>
+
+    <div class="text-center">
+      <hr />
+
+      <router-link :to="{ name: 'ProfileEdit' }" class="btn-green btn-small"
+        >Edit Profile
+      </router-link>
+    </div>
   </div>
 </template>
 
