@@ -52,10 +52,15 @@ export default {
     }
   },
   data() {
-    return {
-      users: this.$store.state.sourceData.users,
-      posts: this.$store.state.sourceData.posts
-    };
+    return {};
+  },
+  computed: {
+    users() {
+      return this.$store.state.sourceData.users;
+    },
+    posts() {
+      return this.$store.state.sourceData.posts;
+    }
   },
   methods: {
     postById(id) {

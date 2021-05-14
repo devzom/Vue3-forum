@@ -23,8 +23,6 @@
 </template>
 
 <script>
-import data from '@/assets/dummyData.json';
-
 export default {
   name: 'PostList',
   props: {
