@@ -24,29 +24,17 @@ export default {
       required: true
     }
   },
-  data() {
-    return {
-      threads: this.$store.state.sourceData.threads,
-      posts: this.$store.state.sourceData.posts
-    };
-  },
   computed: {
     thread() {
-      return this.threads.find((thread) => thread.id === this.id);
+      return this.$store.getters.forumData.threads.find((thread) => thread.id === this.id);
     },
     threadPosts() {
-      return this.posts.filter((post) => post.threadId === this.id);
+      return this.$store.getters.forumData.posts.filter((post) => post.threadId === this.id);
     }
   },
   methods: {
-    submitPost(newPost) {
-      const post = {
-        ...newPost.post,
-        threadId: this.id
-      };
-
-      this.posts.push(post);
-      this.thread.posts.push(post.id);
+    submitPost(post) {
+      this.$store.dispatch('createPost', post);
     }
   }
 };
