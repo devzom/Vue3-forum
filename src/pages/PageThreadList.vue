@@ -39,7 +39,6 @@
 </template>
 
 <script>
-import data from '@/assets/dummyData.json';
 import BaseDate from '@/components/BaseDate';
 
 export default {
@@ -54,8 +53,8 @@ export default {
   },
   data() {
     return {
-      posts: data.posts,
-      users: data.users
+      users: this.$store.state.sourceData.users,
+      posts: this.$store.state.sourceData.posts
     };
   },
   methods: {

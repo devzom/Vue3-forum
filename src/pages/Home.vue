@@ -6,16 +6,15 @@
 </template>
 
 <script>
-import data from '@/assets/dummyData.json';
 import CategoryList from '@/components/category/CategoryList';
 
 export default {
   name: 'Home',
   components: { CategoryList },
-  data() {
-    return {
-      categories: data.categories
-    };
+  computed: {
+    categories() {
+      return this.$store.getters.forumData.categories;
+    }
   }
 };
 </script>

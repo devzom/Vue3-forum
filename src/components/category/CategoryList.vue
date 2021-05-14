@@ -10,7 +10,6 @@
 
 <script>
 import ForumList from '@/components/ForumList';
-import jsonData from '@/assets/dummyData.json';
 
 export default {
   name: 'CategoryList',
@@ -24,7 +23,8 @@ export default {
   },
   computed: {
     forumForCategory() {
-      return (category) => jsonData.forums.filter((forum) => forum.categoryId === category.id);
+      return (category) =>
+        this.$store.getters.forumData.forums.filter((forum) => forum.categoryId === category.id);
     }
   }
 };

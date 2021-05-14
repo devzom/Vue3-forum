@@ -34,10 +34,10 @@ export default {
       required: true
     }
   },
-  data() {
-    return {
-      users: data.users
-    };
+  computed: {
+    users() {
+      return this.$store.getters.forumData.users;
+    }
   },
   methods: {
     userById(id) {

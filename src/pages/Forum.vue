@@ -15,7 +15,6 @@
 </template>
 
 <script>
-import jsonData from '@/assets/dummyData.json';
 import ThreadList from '@/pages/PageThreadList';
 
 export default {
@@ -29,13 +28,13 @@ export default {
   },
   computed: {
     forum() {
-      return jsonData.forums.find((forum) => forum.id === this.id);
+      return this.$store.getters.forumData.forums.find((forum) => forum.id === this.id);
     },
     threads() {
-      return jsonData.threads.filter((thread) => thread.forumId === this.id);
+      return this.$store.getters.forumData.threads.filter((thread) => thread.forumId === this.id);
     }
   }
 };
 </script>
 
-<style scoped></style>
+<style></style>

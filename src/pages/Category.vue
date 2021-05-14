@@ -4,7 +4,6 @@
 </template>
 
 <script>
-import jsonData from '@/assets/dummyData.json';
 import ForumList from '@/components/ForumList';
 
 export default {
@@ -19,10 +18,11 @@ export default {
   },
   computed: {
     category() {
-      return jsonData.categories.find((category) => category.id === this.id);
+      return this.$store.getters.forumData.categories.find((category) => category.id === this.id);
     },
     forumForCategory() {
-      return (category) => jsonData.forums.filter((forum) => forum.categoryId === category.id);
+      return (category) =>
+        this.$store.getters.forumData.forums.filter((forum) => forum.categoryId === category.id);
     }
   }
 };

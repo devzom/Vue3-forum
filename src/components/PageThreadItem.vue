@@ -12,7 +12,6 @@
 </template>
 
 <script>
-import jsonData from '@/assets/dummyData.json';
 import PostList from '@/components/post/PostList';
 import PostEditor from '@/components/post/PostEditor';
 
@@ -27,8 +26,8 @@ export default {
   },
   data() {
     return {
-      threads: jsonData.threads,
-      posts: jsonData.posts
+      threads: this.$store.state.sourceData.threads,
+      posts: this.$store.state.sourceData.posts
     };
   },
   computed: {
