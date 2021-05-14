@@ -3,10 +3,6 @@
     <div class="forum-list">
       <h2 class="list-title">
         <a href="#">{{ title }}</a>
-
-        <router-link :to="{ name: 'Forum', params: { id: forum.id } }" class="text-xlarge">
-          {{ title }}
-        </router-link>
       </h2>
 
       <div v-for="forum in forums" :key="forum.id" class="forum-listing">
@@ -52,7 +48,7 @@ export default {
   methods: {
     forumThreadsWord(forum) {
       if (forum.threads?.length) {
-        return `thread${forum.threads.length > 0 ? 's' : ''}`;
+        return `thread${forum.threads.length ? 's' : ''}`;
       }
       return 'no threads';
     }
@@ -60,4 +56,4 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style></style>
