@@ -12,11 +12,15 @@
     <!-- use .navbar-open to open nav -->
     <nav class="navbar">
       <ul>
-        <li class="navbar-user">
+        <li v-if="isAuthenticated" class="navbar-user">
           <a href="#">
-            <img class="avatar-small" src="https://picsum.photos/50/50" alt="" />
+            <img
+              class="avatar-small"
+              :src="loggedUser.avatar"
+              :alt="`${loggedUser.name} profile picture`"
+            />
             <span>
-              My profile
+              {{ loggedUser.name }}
               <img class="icon-profile" src="../assets/img/svg/arrow-profile.svg" alt="" />
             </span>
           </a>
@@ -30,6 +34,11 @@
               <li class="dropdown-menu-item"><a href="#">Log out</a></li>
             </ul>
           </div>
+        </li>
+        <li v-else>
+          <a href="#">
+            <span> Login </span>
+          </a>
         </li>
       </ul>
 
@@ -47,10 +56,10 @@
         <!--          <router-link :to="{ name: 'Thread' }">Thread</router-link>-->
         <!--        </li>-->
         <!-- Show these option only on mobile-->
-        <li class="navbar-item mobile-only">
+        <li v-if="isAuthenticated" class="navbar-item mobile-only">
           <a href="#">My Profile</a>
         </li>
-        <li class="navbar-item mobile-only">
+        <li v-if="isAuthenticated" class="navbar-item mobile-only">
           <a href="#">Logout</a>
         </li>
       </ul>
@@ -59,8 +68,13 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
+
 export default {
-  name: 'TheNavbar'
+  name: 'TheNavbar',
+  computed: {
+    ...mapGetters(['loggedUser', 'isAuthenticated'])
+  }
 };
 </script>
 

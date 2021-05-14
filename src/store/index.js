@@ -4,10 +4,17 @@ import sourceData from '@/assets/dummyData.json';
 
 export default createStore({
   state: {
-    sourceData
+    sourceData,
+    auth: {
+      id: 'u4r8XCziZEWEXsj2UIKNHBoDh0n2',
+      isLogged: true
+    }
   },
   getters: {
-    forumData: (state) => state.sourceData
+    forumData: (state) => state.sourceData,
+    // *auth related
+    loggedUser: (state) => state.sourceData.users.find((user) => user.id === state.auth.id),
+    isAuthenticated: (state) => state.auth.isLogged
   },
   actions: {
     createPost(context, payload) {
