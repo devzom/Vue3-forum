@@ -27,8 +27,10 @@
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-vue": "^7.0.0",
+    "node-sass": "^6.0.0",
     "postcss-preset-env": "^6.7.0",
-    "prettier": "^2.2.1"
+    "prettier": "^2.2.1",
+    "sass-loader": "10"
   },
   "browserslist": [
     "> 1%",
