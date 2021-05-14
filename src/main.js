@@ -1,4 +1,13 @@
-import { createApp } from 'vue'
-import App from './App.vue'
+import { createApp } from 'vue';
+import router from '@/router';
+import filters from '@/filters/filters';
+import store from '@/store';
+import App from './App.vue';
 
-createApp(App).mount('#app')
+const forumApp = createApp(App);
+
+forumApp.config.globalProperties.$filters = filters; // set global filters
+
+forumApp.use(router);
+forumApp.use(store);
+forumApp.mount('#app');
