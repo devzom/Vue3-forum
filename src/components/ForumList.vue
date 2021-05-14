@@ -2,7 +2,10 @@
   <div class="col-full">
     <div class="forum-list">
       <h2 class="list-title">
-        <a href="#">{{ title }}</a>
+        <router-link v-if="categoryId" :to="{ name: 'Category', params: { id: categoryId } }">{{
+          title
+        }}</router-link>
+        <span v-else>{{ title }}</span>
       </h2>
 
       <div v-for="forum in forums" :key="forum.id" class="forum-listing">
@@ -48,7 +51,7 @@ export default {
   methods: {
     forumThreadsWord(forum) {
       if (forum.threads?.length) {
-        return `thread${forum.threads.length ? 's' : ''}`;
+        return `thread${forum.threads.length === 1 ? '' : 's'}`;
       }
       return 'no threads';
     }
