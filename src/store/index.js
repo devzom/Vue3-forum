@@ -6,7 +6,7 @@ export default createStore({
   state: {
     sourceData,
     auth: {
-      id: 'u4r8XCziZEWEXsj2UIKNHBoDh0n2',
+      id: 'jVa6Go6Nl1Urkag1R2p9CHTf4ny1',
       isLogged: true
     }
   },
@@ -52,7 +52,7 @@ export default createStore({
   },
   mutations: {
     SET_POST(state, post) {
-      state.sourceData.posts.push(post);
+      state.sourceData.posts.push({ ...post, userId: state.auth.id });
     },
     ADD_POST_THREAD(state, { postId, threadId }) {
       const thread = state.sourceData.threads.find((_thread) => _thread.id === threadId);

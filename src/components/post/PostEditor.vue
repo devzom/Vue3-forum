@@ -44,7 +44,6 @@ export default {
       }
 
       const post = {
-        userId: 'u4r8XCziZEWEXsj2UIKNHBoDh0n2',
         threadId: this.postId,
         publishedAt: Math.floor(Date.now() / 1000),
         text: this.text
@@ -52,12 +51,12 @@ export default {
 
       this.$emit('addPost', post); // update/add post in parent component
 
-      this.submitted = !this.submitted;
+      this.submitted = true;
       this.text = ''; // clear input
 
-      // setInterval(() => {
-      //   this.submitted = !this.submitted;
-      // }, 2000);
+      setInterval(() => {
+        this.submitted = !this.submitted;
+      }, 2000);
     }
   }
 };
