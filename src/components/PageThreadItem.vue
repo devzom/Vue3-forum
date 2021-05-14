@@ -13,8 +13,8 @@
 
 <script>
 import jsonData from '@/assets/dummyData.json';
-import PostList from '@/components/PostList';
-import PostEditor from '@/components/PostEditor';
+import PostList from '@/components/post/PostList';
+import PostEditor from '@/components/post/PostEditor';
 
 export default {
   name: 'PageThreadItem',
