@@ -1,6 +1,6 @@
 <template>
   <header id="header" class="header">
-    <a href="index.html" class="logo">Vue Forum</a>
+    <router-link :to="{ name: 'Home' }" class="logo">Vue Forum</router-link>
 
     <div class="btn-hamburger">
       <!-- use .btn-humburger-active to open the menu -->
@@ -13,7 +13,7 @@
     <nav class="navbar">
       <ul>
         <li v-if="isAuthenticated" class="navbar-user">
-          <a href="#">
+          <router-link :to="{ name: 'Profile' }">
             <img
               class="avatar-small"
               :src="loggedUser.avatar"
@@ -23,7 +23,7 @@
               {{ loggedUser.name }}
               <img class="icon-profile" src="../assets/img/svg/arrow-profile.svg" alt="" />
             </span>
-          </a>
+          </router-link>
 
           <!-- dropdown menu -->
           <!-- add class "active-drop" to show the dropdown -->

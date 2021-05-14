@@ -3,11 +3,13 @@ import sourceData from '@/assets/dummyData.json';
 import PageHome from '@/pages/Home';
 import Forum from '@/pages/Forum';
 import Category from '@/pages/Category';
+import Profile from '@/pages/Profile';
 import PageThreadItem from '@/components/PageThreadItem';
 import NotFound from '@/pages/404';
 
 const routes = [
   { path: '/', name: 'Home', component: PageHome },
+  { path: '/profile', name: 'Profile', component: Profile },
   { path: '/forum/:id', name: 'Forum', component: Forum, props: true },
   { path: '/category/:id', name: 'Category', component: Category, props: true },
   {
