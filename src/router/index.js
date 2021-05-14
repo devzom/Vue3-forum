@@ -10,6 +10,7 @@ import NotFound from '@/pages/404';
 const routes = [
   { path: '/', name: 'Home', component: PageHome },
   { path: '/profile', name: 'Profile', component: Profile },
+  { path: '/profile/edit', name: 'ProfileEdit', component: Profile, props: { edit: true } },
   { path: '/forum/:id', name: 'Forum', component: Forum, props: true },
   { path: '/category/:id', name: 'Category', component: Category, props: true },
   {
