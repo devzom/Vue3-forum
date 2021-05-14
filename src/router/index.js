@@ -9,7 +9,12 @@ import NotFound from '@/pages/404';
 
 const routes = [
   { path: '/', name: 'Home', component: PageHome },
-  { path: '/profile', name: 'Profile', component: Profile },
+  {
+    path: '/profile',
+    name: 'Profile',
+    component: Profile,
+    meta: { toTop: true, smoothScroll: true }
+  },
   { path: '/profile/edit', name: 'ProfileEdit', component: Profile, props: { edit: true } },
   { path: '/forum/:id', name: 'Forum', component: Forum, props: true },
   { path: '/category/:id', name: 'Category', component: Category, props: true },
@@ -34,7 +39,14 @@ const routes = [
   },
   { path: '/:pathMatch(.*)*', name: '404', component: NotFound }
 ];
+
 export default createRouter({
   history: createWebHistory(),
-  routes
+  routes,
+  scrollBehavior(to) {
+    const scroll = {};
+    if (to.meta.toTop) scroll.top = 0;
+    if (to.meta.smoothScroll) scroll.behavior = 'smooth';
+    return scroll;
+  }
 });

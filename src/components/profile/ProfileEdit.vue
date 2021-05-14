@@ -63,7 +63,7 @@
       </div>
 
       <div class="btn-group space-between">
-        <button class="btn-ghost">Cancel</button>
+        <button type="reset" class="btn-ghost" @click="goBack">Cancel</button>
         <button type="submit" class="btn-blue">Save</button>
       </div>
     </form>
@@ -87,6 +87,9 @@ export default {
   methods: {
     save() {
       this.$store.dispatch('updateUser', { ...this.activeUser });
+      this.goBack();
+    },
+    goBack() {
       this.$router.push({ name: 'Profile' });
     }
   }
